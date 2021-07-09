@@ -1,0 +1,57 @@
+* {
+  margin:  0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-title: #fff;
+  --text-base: #FD7900;
+
+  --gradient-one: #FD7900;
+  --gradient-two: #FD9433;
+}
+
+@media (max-width: 1080) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  background-color: #5F5F5F;
+  background: url('../../public/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-title);
+  min-height: 100vh;
+}
+
+body, input, textarea, select, button {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
