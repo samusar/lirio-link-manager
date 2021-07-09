@@ -13,6 +13,7 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://iblv-links.vercel.app/" />
           <meta property="og:image" content="https://iblv-links.vercel.app/ogseo.png" />
           <meta name="robots" content="index" />
+          <link rel="shortcut icon" href="logo.png" type="image/png" />
         </Head>
         <body>
           <Main />
