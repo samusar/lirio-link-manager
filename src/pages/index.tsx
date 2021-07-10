@@ -9,6 +9,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import logoImage from '../../public/logo.svg';
 
 import styles from './home.module.scss';
+import { ButtonCopy } from '../components/ButtonCopy';
 
 
 type LinkAccess = {
@@ -47,52 +48,27 @@ export default function Home({ infoBank }: HomePros) {
           IBLV | <span>Uma Igreja em Célula</span>
         </h1>
         <p>PIX</p>
-        <CopyToClipboard text={infoBank.chave_pix}>
-          <div className={styles.seletor}>
-            <p>{infoBank.tipo_chave_pix}:</p>
-            <span>{infoBank.chave_pix}</span>
-            <button>
-              <FiCopy color="#fff" size={18} />
-            </button>
-          </div>
-        </CopyToClipboard>
+        <ButtonCopy 
+          description={infoBank.tipo_chave_pix}
+          value={infoBank.chave_pix}
+        />
         <p>DADOS BANCÁRIOS</p>
-        <CopyToClipboard text={infoBank.banco}>
-          <div className={styles.seletor}>
-              <p>Banco:</p>
-              <span>{infoBank.banco}</span>
-              <button>
-                <FiCopy color="#fff" size={18} />
-              </button>
-          </div>
-        </CopyToClipboard>
-        <CopyToClipboard text={infoBank.agencia}>
-          <div className={styles.seletor}>
-            <p>Ag.:</p>
-            <span>{infoBank.agencia}</span>
-            <button>
-              <FiCopy color="#fff" size={18} />
-            </button>
-          </div>
-        </CopyToClipboard>
-        <CopyToClipboard text={infoBank.conta}>
-          <div className={styles.seletor}>
-            <p>Conta:</p>
-            <span>{infoBank.conta}</span>
-            <button>
-              <FiCopy color="#fff" size={18} />
-            </button>
-          </div>
-        </CopyToClipboard>
-        <CopyToClipboard text={infoBank.cnpj}>
-          <div className={styles.seletor}>
-            <p>CNPJ:</p>
-            <span>{infoBank.cnpj}</span>
-            <button>
-              <FiCopy color="#fff" size={18} />
-            </button>
-          </div>
-        </CopyToClipboard>
+        <ButtonCopy 
+          description="Banco"
+          value={infoBank.banco}
+        />
+        <ButtonCopy 
+          description="Ag."
+          value={infoBank.agencia}
+        />
+        <ButtonCopy 
+          description="Conta"
+          value={infoBank.conta}
+        />
+        <ButtonCopy 
+          description="CNPJ"
+          value={infoBank.cnpj}
+        />
         <p>ACESSE</p>
         { infoBank.links.map(link => (
           <a 
@@ -129,8 +105,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   if (responsePrismc && responsePrismc.results[0]) {
     const { data } = responsePrismc.results[0];
-
-    console.log(data.body[0].items);
 
     return {
       props: {
