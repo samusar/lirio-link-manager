@@ -74,8 +74,17 @@
 }
 
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   a {
-    text-decoration: underline;
     font-weight: 600;
+    margin-bottom: 2rem;
+
+    padding: 1rem;
+    width: 60vw;
+    border: 1px solid  rgb(241, 241, 241);
+    border-radius: 7px;
   }
 }
